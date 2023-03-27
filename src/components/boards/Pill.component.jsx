@@ -1,7 +1,7 @@
 import React from "react";
 
 import { HiOutlineDocument } from "react-icons/hi2";
-import { BiTime } from "react-icons/bi";
+import { RiTimerLine } from "react-icons/ri";
 import { IoBug } from "react-icons/io5";
 import { PILL_ICON, PILL_TYPE } from "../../utils/utils";
 
@@ -9,7 +9,7 @@ import { PILL_ICON, PILL_TYPE } from "../../utils/utils";
 const PillComponent = ({ text, type, icon }) => {
   const pillIcon = () => {
     if (icon === PILL_ICON.REQUIREMENTS) return <HiOutlineDocument />;
-    if (icon === PILL_ICON.ET) return <BiTime />;
+    if (icon === PILL_ICON.ET) return <RiTimerLine />;
     if (icon === PILL_ICON.BUG) return <IoBug />;
   };
 

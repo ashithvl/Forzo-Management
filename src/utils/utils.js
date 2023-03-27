@@ -19,7 +19,7 @@ const STAGE = {
 const getRequirementStatus = (status) => {
   if (status === 1) return "Requirement";
   if (status === 2) return "Requirement - FTL";
-  if (status === 3) return "Requirement - Customer";
+  if (status === 3) return "Requirement - Cus";
 };
 
 export { PILL_TYPE, PILL_ICON, STAGE, getRequirementStatus };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { HiOutlineRocketLaunch } from "react-icons/hi2";
 import { BsLightningCharge } from "react-icons/bs";
@@ -11,42 +11,90 @@ import { home } from "../../data/data";
 import { STAGE } from "../../utils/utils";
 
 const OverviewComponent = () => {
+  const [cardData, setCardData] = useState(home);
+
+  const getTotal = (stage) => {
+    if (stage === STAGE.TO_START) {
+      let total = 0;
+      home.forEach((data) => {
+        if (data.toStart) total = total + data.toStart;
+      });
+      return total;
+    }
+    if (stage === STAGE.WIP) {
+      let total = 0;
+      home.forEach((data) => {
+        if (data.wip) total = total + data.wip;
+      });
+      return total;
+    }
+    if (stage === STAGE.COMPLETED) {
+      let total = 0;
+      home.forEach((data) => {
+        if (data.completed) total = total + data.completed;
+      });
+      return total;
+    }
+  };
+
   return (
-    <section className="grid grid-cols-3 gap-3 h-full px-4 bg-teal-50">
-      <div className="flex flex-col min-h-0 rounded p-2 my-4 bg-white">
+    <section className="grid grid-cols-3 gap-3 h-full px-4">
+      <div className="flex flex-col min-h-0 rounded p-2 my-4">
         <HeaderComponent
           title="To Start"
           icon={<HiOutlineRocketLaunch />}
-          count="07"
+          count={getTotal(STAGE.TO_START)}
         />
-        <div class="flex-1 overflow-y-scroll">
-          {home.map((data) => {
+        <div className="flex-1 overflow-y-scroll">
+          {cardData.map((data) => {
             if (data.toStart)
-              return <CardComponent data={data} type={STAGE.TO_START} />;
+              return (
+                <CardComponent
+                  key={data.releaseName}
+                  data={data}
+                  type={STAGE.TO_START}
+                />
+              );
             else return null;
           })}
         </div>
       </div>
-      <div className="flex flex-col min-h-0 rounded p-2 my-4 bg-white">
+      <div className="flex flex-col min-h-0 rounded p-2 my-4 ">
         <HeaderComponent
           title="Work In Progress"
           icon={<BsLightningCharge />}
-          count="19"
+          count={getTotal(STAGE.WIP)}
         />
-        <div class="flex-1 overflow-y-scroll">
-          {home.map((data) => {
-            if (data.toStart)
-              return <CardComponent data={data} type={STAGE.WIP} />;
+        <div className="flex-1 overflow-y-scroll">
+          {cardData.map((data) => {
+            if (data.wip)
+              return (
+                <CardComponent
+                  key={data.releaseName}
+                  data={data}
+                  type={STAGE.WIP}
+                />
+              );
             else return null;
           })}
         </div>
       </div>
-      <div className="flex flex-col min-h-0 rounded p-2 my-4 bg-white">
-        <HeaderComponent title="Completed" icon={<FiThumbsUp />} count="30" />
-        <div class="flex-1 overflow-y-scroll">
-          {home.map((data) => {
-            if (data.toStart)
-              return <CardComponent data={data} type={STAGE.COMPLETED} />;
+      <div className="flex flex-col min-h-0 rounded p-2 my-4 ">
+        <HeaderComponent
+          title="Completed"
+          icon={<FiThumbsUp />}
+          count={getTotal(STAGE.COMPLETED)}
+        />
+        <div className="flex-1 overflow-y-scroll">
+          {cardData.map((data) => {
+            if (data.completed)
+              return (
+                <CardComponent
+                  key={data.releaseName}
+                  data={data}
+                  type={STAGE.COMPLETED}
+                />
+              );
             else return null;
           })}
         </div>
