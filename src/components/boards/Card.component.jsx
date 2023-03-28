@@ -108,7 +108,7 @@ const CardComponent = ({ data, type }) => {
               <p className="text-xs text-fuchsia-600">
                 {data.projectName.toUpperCase()}
               </p>
-              <p className="text-lg text-neutral-600 mt-3">
+              <p className="text-md text-neutral-600 mt-3">
                 {data.releaseName}
               </p>
             </div>

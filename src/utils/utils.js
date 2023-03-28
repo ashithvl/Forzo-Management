@@ -1,3 +1,6 @@
+import { MdOutlineTopic } from "react-icons/md";
+import { RxDashboard } from "react-icons/rx";
+
 const PILL_TYPE = {
   SUCCESS: "success",
   DANGER: "danager",
@@ -22,4 +25,16 @@ const getRequirementStatus = (status) => {
   if (status === 3) return "Requirement - Cus";
 };
 
-export { PILL_TYPE, PILL_ICON, STAGE, getRequirementStatus };
+const navLinks = [
+  {
+    name: "Dashboard",
+    path: "/",
+    icon: <RxDashboard size={30} />,
+  },
+  {
+    name: "Projects",
+    path: "/projects",
+    icon: <MdOutlineTopic size={30} />,
+  },
+];
+export { PILL_TYPE, PILL_ICON, STAGE, navLinks, getRequirementStatus };

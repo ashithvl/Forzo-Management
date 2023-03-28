@@ -3,13 +3,15 @@ import "./styles/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import HomePage from "./pages/Home.page";
+import ProjectPage from "./pages/Project.page";
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route index element={<HomePage />} />
+          <Route path="projects" element={<ProjectPage />} />
         </Routes>
       </BrowserRouter>
     </>

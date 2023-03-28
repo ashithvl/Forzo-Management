@@ -38,7 +38,7 @@ const OverviewComponent = () => {
   };
 
   return (
-    <section className="grid grid-cols-3 gap-3 h-full px-4">
+    <section className="grid grid-cols-3 gap-1 h-full px-2">
       <div className="flex flex-col min-h-0 rounded p-2 my-4">
         <HeaderComponent
           title="To Start"

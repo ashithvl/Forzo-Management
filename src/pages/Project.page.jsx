@@ -5,14 +5,14 @@ import OverviewComponent from "../components/home/Overview.component";
 import TabNavigationComponent from "../components/home/TabNavigation.component";
 import NavBarComponent from "../components/utils/NavBar.component";
 
-const HomePage = () => {
+const ProjectPage = () => {
   const [selectedTab, setSelectedTab] = useState(1);
   return (
     <>
       <div className="flex">
         <NavBarComponent />
         <main className="flex flex-col h-screen w-full bg-fuchsia-50">
-          {selectedTab === 1 ? (
+          {/* {selectedTab === 1 ? (
             <OverviewComponent className="flex-1" />
           ) : (
             <ActionItemComponent className="flex-1" />
@@ -20,11 +20,11 @@ const HomePage = () => {
           <TabNavigationComponent
             selectedTab={selectedTab}
             setSelectedTab={setSelectedTab}
-          />
+          /> */}
         </main>
       </div>
     </>
   );
 };
 
-export default HomePage;
+export default ProjectPage;
