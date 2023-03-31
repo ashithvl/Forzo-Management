@@ -105,7 +105,7 @@ const CardComponent = ({ data, type }) => {
           <div className="w-full h-px mt-2 bg-neutral-200"></div>
           <div className="flex w-full mt-3 items-center">
             <div>
-              <p className="text-xs text-fuchsia-600">
+              <p className="text-xs text-purple-600">
                 {data.projectName.toUpperCase()}
               </p>
               <p className="text-md text-neutral-600 mt-3">

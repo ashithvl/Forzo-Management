@@ -11,7 +11,7 @@ const HomePage = () => {
     <>
       <div className="flex">
         <NavBarComponent />
-        <main className="flex flex-col h-screen w-full bg-fuchsia-50">
+        <main className="flex flex-col h-screen w-full bg-purple-50">
           {selectedTab === 1 ? (
             <OverviewComponent className="flex-1" />
           ) : (

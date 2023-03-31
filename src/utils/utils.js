@@ -37,4 +37,17 @@ const navLinks = [
     icon: <MdOutlineTopic size={30} />,
   },
 ];
-export { PILL_TYPE, PILL_ICON, STAGE, navLinks, getRequirementStatus };
+
+const ACTION_TYPE = {
+  REQUIREMENT: "requirement",
+  HOURS: "hours",
+  DEFECT: "defect",
+};
+export {
+  PILL_TYPE,
+  PILL_ICON,
+  STAGE,
+  ACTION_TYPE,
+  navLinks,
+  getRequirementStatus,
+};

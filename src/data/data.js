@@ -86,4 +86,53 @@ const home = [
   },
 ];
 
-export { home };
+const action = [
+  {
+    projectName: "Dealerline",
+    releaseName: "r10.0 - UI - update",
+    updatedAt: "20-01-2023",
+    version: "20",
+    planned: null,
+    actual: null,
+    internalDefect: 20,
+    customerDefect: 2,
+    message: "Requirement waiting for customer review",
+  },
+  {
+    projectName: "Dealerline",
+    releaseName: "r10.0 - UI - update",
+    updatedAt: "20-02-2023",
+    version: "20",
+    planned: 200,
+    actual: 260,
+    internalDefect: 20,
+    customerDefect: 2,
+    message: "Requirement waiting for customer review",
+  },
+  {
+    projectName: "Dealerline",
+    releaseName: "r10.0 - UI - update",
+    updatedAt: "20-02-2023",
+    version: "20",
+    planned: 200,
+    actual: 260,
+    internalDefect: 20,
+    customerDefect: 2,
+    message: "Requirement waiting for customer review",
+  },
+];
+
+const todoList = [
+  {
+    title: "Hellow world",
+    description: "This is world",
+    dueDate: "20-02-2023",
+  },
+  {
+    title: "Hellow world",
+    description: "This is world",
+    dueDate: "20-02-2023",
+  },
+];
+
+export { home, action, todoList };
