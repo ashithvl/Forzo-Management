@@ -18,7 +18,7 @@ const NavBarComponent = () => {
       <div className="h-full flex flex-col items-center justify-center py-4 mr-0 rounded bg-white gap-4">
         {navLinks.map((nav) => {
           return (
-            <div className="flex">
+            <div className="flex" key={nav.path}>
               <Link
                 className={getNavStyle(location.pathname === nav.path)}
                 to={nav.path}

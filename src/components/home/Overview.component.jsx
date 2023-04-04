@@ -5,7 +5,7 @@ import { BsLightningCharge } from "react-icons/bs";
 import { FiThumbsUp } from "react-icons/fi";
 
 import HeaderComponent from "../boards/Header.component";
-import CardComponent from "../boards/Card.component";
+import ProjectCardComponent from "../cards/ProjectCard.component";
 
 import { home } from "../../data/data";
 import { STAGE } from "../../utils/utils";
@@ -49,7 +49,7 @@ const OverviewComponent = () => {
           {cardData.map((data) => {
             if (data.toStart)
               return (
-                <CardComponent
+                <ProjectCardComponent
                   key={data.releaseName}
                   data={data}
                   type={STAGE.TO_START}
@@ -69,7 +69,7 @@ const OverviewComponent = () => {
           {cardData.map((data) => {
             if (data.wip)
               return (
-                <CardComponent
+                <ProjectCardComponent
                   key={data.releaseName}
                   data={data}
                   type={STAGE.WIP}
@@ -89,7 +89,7 @@ const OverviewComponent = () => {
           {cardData.map((data) => {
             if (data.completed)
               return (
-                <CardComponent
+                <ProjectCardComponent
                   key={data.releaseName}
                   data={data}
                   type={STAGE.COMPLETED}

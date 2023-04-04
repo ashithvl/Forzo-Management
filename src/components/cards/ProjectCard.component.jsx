@@ -10,11 +10,12 @@ import {
   PILL_ICON,
   PILL_TYPE,
   getRequirementStatus,
+  DATE,
 } from "../../utils/utils";
 
-import PillComponent from "./Pill.component";
+import PillComponent from "../boards/Pill.component";
 
-const CardComponent = ({ data, type }) => {
+const ProjectCardComponent = ({ data, type }) => {
   const getCompleted = () => {
     if (type === STAGE.TO_START) {
       return data.toStart;
@@ -118,13 +119,13 @@ const CardComponent = ({ data, type }) => {
             </div>
           </div>
           <div className="flex w-full mt-2 items-center">
-            <p className="text-sm text-neutral-700">
+            <p className="text-xs text-neutral-500">
               EST : {data.planned ? `${data.planned} hrs` : "TBD"}
             </p>
             <p className="text-xs text-neutral-400 flex-1 items-end text-right mr-2">
               updated{" "}
               <ReactTimeAgo
-                date={moment(data.updatedAt, "DD-MM-YYYY").toDate()}
+                date={moment(data.updatedAt, DATE.DMY).toDate()}
                 locale="en-US"
               />
             </p>
@@ -135,4 +136,4 @@ const CardComponent = ({ data, type }) => {
   );
 };
 
-export default CardComponent;
+export default ProjectCardComponent;

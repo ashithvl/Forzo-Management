@@ -15,6 +15,7 @@ const home = [
       internalDefects: 0,
     },
     requirementStatus: 1,
+    requirementVersion: 10,
   },
   {
     projectName: "Dealerline",
@@ -32,6 +33,7 @@ const home = [
       internalDefects: 0,
     },
     requirementStatus: 2,
+    requirementVersion: 10,
   },
   {
     projectName: "Dealerline",
@@ -49,12 +51,13 @@ const home = [
       internalDefects: 11,
     },
     requirementStatus: 1,
+    requirementVersion: 10,
   },
   {
     projectName: "Dealerline",
     releaseName: "r12.0 - sel - trade - val",
     planned: 300,
-    actual: 500,
+    actual: 200,
     totalModules: 8,
     toStart: 2,
     wip: 6,
@@ -62,10 +65,11 @@ const home = [
     updatedAt: "20-03-2023",
     uat: {
       isUat: false,
-      customerDefects: 0,
+      customerDefects: 10,
       internalDefects: 0,
     },
     requirementStatus: 1,
+    requirementVersion: 10,
   },
   {
     projectName: "Dealerline",
@@ -83,56 +87,97 @@ const home = [
       internalDefects: 0,
     },
     requirementStatus: 1,
-  },
-];
-
-const action = [
-  {
-    projectName: "Dealerline",
-    releaseName: "r10.0 - UI - update",
-    updatedAt: "20-01-2023",
-    version: "20",
-    planned: null,
-    actual: null,
-    internalDefect: 20,
-    customerDefect: 2,
-    message: "Requirement waiting for customer review",
-  },
-  {
-    projectName: "Dealerline",
-    releaseName: "r10.0 - UI - update",
-    updatedAt: "20-02-2023",
-    version: "20",
-    planned: 200,
-    actual: 260,
-    internalDefect: 20,
-    customerDefect: 2,
-    message: "Requirement waiting for customer review",
-  },
-  {
-    projectName: "Dealerline",
-    releaseName: "r10.0 - UI - update",
-    updatedAt: "20-02-2023",
-    version: "20",
-    planned: 200,
-    actual: 260,
-    internalDefect: 20,
-    customerDefect: 2,
-    message: "Requirement waiting for customer review",
+    requirementVersion: 10,
   },
 ];
 
 const todoList = [
   {
+    id: 1,
     title: "Hellow world",
-    description: "This is world",
-    dueDate: "20-02-2023",
+    description: null,
+    dueDate: "10-04-2023",
   },
   {
+    id: 2,
     title: "Hellow world",
     description: "This is world",
-    dueDate: "20-02-2023",
+    dueDate: "6-04-2023",
+  },
+  {
+    id: 3,
+    title: "Hellow world",
+    description: "This is world",
+    dueDate: "13-04-2023",
+  },
+  {
+    id: 4,
+    title: "Hellow world",
+    description: "This is world",
+    dueDate: "20-04-2023",
+  },
+  {
+    id: 5,
+    title: "Hellow world",
+    description: "This is world",
+    dueDate: "20-04-2023",
+  },
+  {
+    id: 6,
+    title: "Hellow world",
+    description: "This is world",
+    dueDate: "20-04-2023",
+  },
+  {
+    id: 7,
+    title: "Hellow world",
+    description: "This is world",
+    dueDate: "20-04-2023",
+  },
+  {
+    id: 8,
+    title: "Hellow world",
+    description: "This is world",
+    dueDate: "20-04-2023",
+  },
+  {
+    id: 9,
+    title: "Hellow world",
+    description: "This is world",
+    dueDate: "20-04-2023",
+  },
+  {
+    id: 10,
+    title: "Hellow world",
+    description: "This is world",
+    dueDate: "20-04-2023",
+  },
+  {
+    id: 11,
+    title: "Hellow world",
+    description: "This is world",
+    dueDate: "20-04-2023",
+  },
+  {
+    id: 12,
+    title: "Hellow world",
+    description: "This is world",
+    dueDate: "20-03-2023",
+  },
+  {
+    id: 13,
+    title: "Hellow world",
+    description:
+      "This is world worldworld world worldworld worldworld worldworld  world worldworldworld",
+    dueDate: "20-03-2023",
+  },
+  {
+    id: 14,
+    title: "Hellow world",
+    description:
+      "This is world worldworld world worldworld worldworld worldworld  world worldworldworld",
+    dueDate: "20-04-2023",
   },
 ];
 
-export { home, action, todoList };
+export { home, todoList };

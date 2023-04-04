@@ -38,11 +38,16 @@ const navLinks = [
   },
 ];
 
+const DATE = {
+  DMY: "DD-MM-YYYY",
+};
+
 const ACTION_TYPE = {
   REQUIREMENT: "requirement",
   HOURS: "hours",
   DEFECT: "defect",
 };
+
 export {
   PILL_TYPE,
   PILL_ICON,
@@ -50,4 +55,5 @@ export {
   ACTION_TYPE,
   navLinks,
   getRequirementStatus,
+  DATE,
 };
