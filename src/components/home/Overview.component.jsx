@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { HiOutlineRocketLaunch } from "react-icons/hi2";
 import { BsLightningCharge } from "react-icons/bs";
@@ -11,7 +11,28 @@ import { home } from "../../data/data";
 import { STAGE } from "../../utils/utils";
 
 const OverviewComponent = () => {
-  const [cardData, setCardData] = useState(home);
+  const [cardData, setCardData] = useState([]);
+
+  useEffect(() => {
+    const hoverData = home.map((data) => {
+      data.hover = false;
+      return data;
+    });
+
+    setCardData([...hoverData]);
+  }, []);
+
+  const setHover = (id, isHovered) => {
+    const hoverData = cardData.map((data) => {
+      if (data.id === id) {
+        console.log(id, isHovered);
+        return { ...data, hover: isHovered };
+      }
+      return data;
+    });
+    console.log(hoverData);
+    setCardData([...hoverData]);
+  };
 
   const getTotal = (stage) => {
     if (stage === STAGE.TO_START) {
@@ -53,6 +74,7 @@ const OverviewComponent = () => {
                   key={data.releaseName}
                   data={data}
                   type={STAGE.TO_START}
+                  setHover={setHover}
                 />
               );
             else return null;
@@ -73,6 +95,7 @@ const OverviewComponent = () => {
                   key={data.releaseName}
                   data={data}
                   type={STAGE.WIP}
+                  setHover={setHover}
                 />
               );
             else return null;
@@ -93,6 +116,7 @@ const OverviewComponent = () => {
                   key={data.releaseName}
                   data={data}
                   type={STAGE.COMPLETED}
+                  setHover={setHover}
                 />
               );
             else return null;

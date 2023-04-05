@@ -15,7 +15,7 @@ import {
 
 import PillComponent from "../boards/Pill.component";
 
-const ProjectCardComponent = ({ data, type }) => {
+const ProjectCardComponent = ({ data, type, setHover }) => {
   const getCompleted = () => {
     if (type === STAGE.TO_START) {
       return data.toStart;
@@ -55,10 +55,24 @@ const ProjectCardComponent = ({ data, type }) => {
     } else return "UAT";
   };
 
+  const getStyle = (hover) => {
+    if (hover) {
+      return `rounded my-4 p-2 bg-white border border-purple-300`;
+    }
+    return `rounded my-4 p-2 bg-white border border-white`;
+  };
+
+  const getDivderStyle = (hover) => {
+    if (hover) {
+      return `w-full h-px mt-2 bg-purple-300`;
+    }
+    return `w-full h-px mt-2 bg-neutral-200`;
+  };
+
   return (
     <>
       {getCompleted() > 0 && (
-        <div className="border-white rounded my-4 p-2 bg-white">
+        <div className={getStyle(data.hover)}>
           <div className="flex items-center">
             <div className="flex flex-row flex-1">
               <PillComponent
@@ -103,9 +117,16 @@ const ProjectCardComponent = ({ data, type }) => {
               </div>
             ) : null}
           </div>
-          <div className="w-full h-px mt-2 bg-neutral-200"></div>
-          <div className="flex w-full mt-3 items-center">
-            <div>
+          <div className={getDivderStyle(data.hover)}></div>
+          <div
+            className="flex w-full mt-3 items-center"
+            onMouseEnter={() => setHover(data.id, true)}
+            onMouseOut={() => setHover(data.id, false)}
+          >
+            <div
+              onMouseEnter={() => setHover(data.id, true)}
+              onMouseOut={() => setHover(data.id, false)}
+            >
               <p className="text-xs text-purple-600">
                 {data.projectName.toUpperCase()}
               </p>
@@ -113,12 +134,20 @@ const ProjectCardComponent = ({ data, type }) => {
                 {data.releaseName}
               </p>
             </div>
-            <div className="flex flex-col flex-1 items-end mr-2">
+            <div
+              className="flex flex-col flex-1 items-end mr-2"
+              onMouseEnter={() => setHover(data.id, true)}
+              onMouseOut={() => setHover(data.id, false)}
+            >
               <p className="text-2xl text-neutral-700">{getCompleted()}</p>
               <p className="text-md text-neutral-500">of {data.totalModules}</p>
             </div>
           </div>
-          <div className="flex w-full mt-2 items-center">
+          <div
+            className="flex w-full mt-2 items-center"
+            onMouseEnter={() => setHover(data.id, true)}
+            onMouseOut={() => setHover(data.id, false)}
+          >
             <p className="text-xs text-neutral-500">
               EST : {data.planned ? `${data.planned} hrs` : "TBD"}
             </p>

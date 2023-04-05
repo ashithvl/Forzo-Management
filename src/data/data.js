@@ -1,5 +1,6 @@
 const home = [
   {
+    id: 1,
     projectName: "Everify",
     releaseName: "r2.0 - canopy - upgrade",
     planned: null,
@@ -18,6 +19,7 @@ const home = [
     requirementVersion: 10,
   },
   {
+    id: 2,
     projectName: "Dealerline",
     releaseName: "r11.0 - auto-rating",
     planned: 300,
@@ -36,6 +38,7 @@ const home = [
     requirementVersion: 10,
   },
   {
+    id: 3,
     projectName: "Dealerline",
     releaseName: "r11.5 - carleton",
     planned: 300,
@@ -54,6 +57,7 @@ const home = [
     requirementVersion: 10,
   },
   {
+    id: 4,
     projectName: "Dealerline",
     releaseName: "r12.0 - sel - trade - val",
     planned: 300,
@@ -72,6 +76,7 @@ const home = [
     requirementVersion: 10,
   },
   {
+    id: 5,
     projectName: "Dealerline",
     releaseName: "r10.0 - UI - update",
     planned: 300,

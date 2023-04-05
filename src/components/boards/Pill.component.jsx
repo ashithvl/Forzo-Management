@@ -5,7 +5,6 @@ import { RiTimerLine } from "react-icons/ri";
 import { IoBug } from "react-icons/io5";
 import { PILL_ICON, PILL_TYPE } from "../../utils/utils";
 
-
 const PillComponent = ({ text, type, icon }) => {
   const pillIcon = () => {
     if (icon === PILL_ICON.REQUIREMENTS) return <HiOutlineDocument />;
@@ -15,7 +14,7 @@ const PillComponent = ({ text, type, icon }) => {
 
   if (type === PILL_TYPE.SUCCESS)
     return (
-      <div className="border rounded-sm border-green-50 bg-green-100 text-green-600 px-1 mr-1">
+      <div className="rounded-sm bg-green-100 text-green-600 px-1 mr-1">
         <div className="flex flex-row items-center p-1 text-xs gap-1">
           {pillIcon()}
           <p>{text}</p>
@@ -24,7 +23,7 @@ const PillComponent = ({ text, type, icon }) => {
     );
   if (type === PILL_TYPE.DANGER)
     return (
-      <div className="border rounded-sm border-red-50 bg-red-100 text-red-600 px-1 mr-1">
+      <div className="rounded-sm bg-red-100 text-red-600 px-1 mr-1">
         <div className="flex flex-row items-center p-1 text-xs gap-1">
           {pillIcon()}
           <p>{text}</p>
@@ -33,7 +32,7 @@ const PillComponent = ({ text, type, icon }) => {
     );
   if (type === PILL_TYPE.MUTED)
     return (
-      <div className="border rounded-sm border-neutral-50 bg-neutral-100 text-neutral-600 px-1 mr-1">
+      <div className="rounded-sm bg-neutral-100 text-neutral-600 px-1 mr-1">
         <div className="flex flex-row items-center p-1 text-xs gap-1">
           {pillIcon()}
           <p>{text}</p>
