@@ -185,4 +185,199 @@ const todoList = [
   },
 ];
 
-export { home, todoList };
+const breadcrumbs = [
+  {
+    path: "/",
+    name: "Home",
+  },
+  {
+    path: "/project",
+    name: "Project",
+  },
+];
+
+const projects = [
+  {
+    projectName: "Dealerline",
+    owner: "Srilekha",
+    activeReleases: ["website", "blog"],
+  },
+  {
+    projectName: "eVerify",
+    owner: "Deepak",
+    activeReleases: ["ev-2.5", "ev-3.0"],
+  },
+  {
+    projectName: "eVerify",
+    owner: "Deepak",
+    activeReleases: ["ev-2.5", "ev-3.0"],
+  },
+];
+
+const releases = [
+  {
+    releaseName: "rel-11-auto_rating",
+    owner: "Srilekha",
+  },
+  {
+    releaseName: "rel-11.5-SPP",
+    owner: "Srilekha",
+  },
+  {
+    releaseName: "rel-12-trade_eval",
+    owner: "Srilekha",
+  },
+];
+
+const backlogs = [
+  {
+    id: 1,
+    releaseName: "rel-12-auto_rating",
+    userStory: "Forgot password",
+    status: "CLOSED",
+  },
+  {
+    id: 1,
+    releaseName: "rel-12-auto_rating",
+    userStory: "Forgot password",
+    status: "OPEN",
+  },
+  {
+    id: 1,
+    releaseName: "rel-12-auto_rating",
+    userStory: "Forgot password",
+    status: "CLOSED",
+  },
+  {
+    id: 1,
+    releaseName: "rel-12-auto_rating",
+    userStory: "Forgot password test this forgpt password for lejnth ",
+    status: "OPEN",
+  },
+];
+
+const release = [
+  {
+    id: 1,
+    module: "Requirement",
+    plannedStart: "10-4-2023",
+    plannedEnd: "10-4-2023",
+    actualStart: "10-4-2023",
+    actualEnd: "10-4-2023",
+    plannedHours: "200",
+    actualHours: "200",
+    status: "WIP",
+    assignedTo: "Deepak",
+  },
+  {
+    id: 2,
+    module: "Forgot password",
+    plannedStart: "10-4-2023",
+    plannedEnd: "10-4-2023",
+    actualStart: "10-4-2023",
+    actualEnd: "10-4-2023",
+    plannedHours: "200",
+    actualHours: "200",
+    status: "WIP",
+    assignedTo: "Ashith",
+  },
+  {
+    id: 3,
+    module: "Forgot password",
+    plannedStart: "10-4-2023",
+    plannedEnd: "10-4-2023",
+    actualStart: "10-4-2023",
+    actualEnd: "10-4-2023",
+    plannedHours: "200",
+    actualHours: "200",
+    status: "WIP",
+    assignedTo: "Ashith",
+  },
+  {
+    id: 4,
+    module: "Forgot password",
+    plannedStart: "10-4-2023",
+    plannedEnd: "10-4-2023",
+    actualStart: "10-4-2023",
+    actualEnd: "10-4-2023",
+    plannedHours: "200",
+    actualHours: "200",
+    status: "WIP",
+    assignedTo: "Ashith",
+  },
+  {
+    id: 5,
+    module: "UAT",
+    plannedStart: "10-4-2023",
+    plannedEnd: "10-4-2023",
+    actualStart: "10-4-2023",
+    actualEnd: "10-4-2023",
+    plannedHours: "200",
+    actualHours: "200",
+    status: "To Start",
+    assignedTo: "Ashith",
+  },
+];
+
+const driveFolders = [
+  {
+    name: "Project Plan",
+  },
+  {
+    name: "Requirement",
+  },
+  {
+    name: "Design",
+  },
+  {
+    name: "Development",
+  },
+  {
+    name: "Validation",
+  },
+  {
+    name: "Production Support",
+  },
+];
+const driveFiles = [
+  {
+    name: "ev-r2-canopy_upgrade-pp-2023.04.12.xlsx",
+    lastModified: "2023-04-11",
+  },
+  {
+    name: "ev-r2-canopy_upgrade-pp-2023.04.12.xlsx",
+    lastModified: "2023-04-11",
+  },
+  {
+    name: "ev-r2-canopy_upgrade-pp-2023.04.12.xlsx",
+    lastModified: "2023-04-11",
+  },
+  {
+    name: "ev-r2-canopy_upgrade-pp-2023.04.12.xlsx",
+    lastModified: "2023-04-11",
+  },
+  {
+    name: "ev-r2-canopy_upgrade-pp-2023.04.12.xlsx",
+    lastModified: "2023-04-11",
+  },
+  {
+    name: "ev-r2-canopy_upgrade-pp-2023.04.12.xlsx",
+    lastModified: "2023-04-11",
+  },
+  {
+    name: "ev-r2-canopy_upgrade-pp-2023.04.12.xlsx",
+    lastModified: "2023-04-11",
+  },
+];
+
+export {
+  home,
+  todoList,
+  breadcrumbs,
+  projects,
+  releases,
+  backlogs,
+  release,
+  driveFiles,
+  driveFolders,
+};
