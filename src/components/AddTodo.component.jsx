@@ -90,7 +90,7 @@ const AddTodoComponent = ({ setTodos, todos }) => {
             />
           </button>
           <button
-            className="px-2 border border-purple-50 rounded bg-purple-200 text-purple-700"
+            className="px-2 border border-purple-50 rounded bg-purple-200 text-purple-700 cursor-pointer"
             onClick={addTodoHandler}
           >
             <MdSend />

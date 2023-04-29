@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { BsPlusCircle } from "react-icons/bs";
 import { MdPendingActions } from "react-icons/md";
 
-import { home, todoList } from "../../data/data";
+import { data, todoList } from "../../data/data";
 import { ACTION_TYPE, DATE } from "../../utils/utils";
 import ActionItemCardComponent from "../cards/ActionItemCard.component";
 import TodoCardComponent from "../cards/TodoCard.component";
@@ -32,7 +32,7 @@ const ActionItemComponent = () => {
       <div className="flex flex-col min-h-0 rounded p-2 my-4">
         <HeaderComponent title="Action Required" icon={<MdPendingActions />} />
         <div className="flex-1 overflow-y-scroll">
-          {home.map((data) => {
+          {data.map((data) => {
             if (getActionType(data))
               return (
                 <ActionItemCardComponent

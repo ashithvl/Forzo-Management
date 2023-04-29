@@ -1,6 +1,6 @@
 import React from "react";
 import { useTable } from "react-table";
-import { release } from "../../data/data";
+import { release } from "../../../data/data";
 
 const TableViewComponent = () => {
   const data = React.useMemo(() => release, []);
@@ -49,8 +49,10 @@ const TableViewComponent = () => {
     ],
     []
   );
+
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data });
+
   return (
     <table {...getTableProps()} className="w-full">
       <thead>
@@ -59,7 +61,7 @@ const TableViewComponent = () => {
             {headerGroup.headers.map((column) => (
               <th
                 {...column.getHeaderProps()}
-                className="bg-purple-200 text-purple-900 font-bold text-xs p-2 border border-purple-300"
+                className="bg-purple-200 text-purple-900 font-bold text-xs p-2 border border-purple-300 text-start"
               >
                 {column.render("Header")}
               </th>
@@ -71,17 +73,17 @@ const TableViewComponent = () => {
         {rows.map((row, index) => {
           prepareRow(row);
           return (
-            <tr
-              {...row.getRowProps()}
-              className={`${
-                index === 0 || index === rows.length - 1
-                  ? `bg-purple-100 border-b border-purple-200`
-                  : `bg-white border border-neutral-200`
-              }`}
-            >
-              {row.cells.map((cell, index) => {
+            <tr {...row.getRowProps()}>
+              {row.cells.map((cell) => {
                 return (
-                  <td {...cell.getCellProps()} className={`p-1  text-xs  `}>
+                  <td
+                    {...cell.getCellProps()}
+                    className={`${
+                      index === 0 || index === rows.length - 1
+                        ? `bg-purple-100 border border-purple-300`
+                        : `bg-white border border-neutral-200`
+                    } text-xs p-1`}
+                  >
                     {cell.render("Cell")}
                   </td>
                 );

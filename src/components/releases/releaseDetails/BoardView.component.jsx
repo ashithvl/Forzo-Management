@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderComponent from "../boards/Header.component";
+import HeaderComponent from "../../boards/Header.component";
 import { MdCheckCircle, MdTrendingUp, MdUpload } from "react-icons/md";
 
 const BoardViewComponent = () => {

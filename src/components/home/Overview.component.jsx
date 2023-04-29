@@ -5,16 +5,16 @@ import { BsLightningCharge } from "react-icons/bs";
 import { FiThumbsUp } from "react-icons/fi";
 
 import HeaderComponent from "../boards/Header.component";
-import ProjectCardComponent from "../cards/ProjectCard.component";
+import BoardCardComponent from "../cards/BoardCard.component";
 
-import { home } from "../../data/data";
+import { data } from "../../data/data";
 import { STAGE } from "../../utils/utils";
 
 const OverviewComponent = () => {
   const [cardData, setCardData] = useState([]);
 
   useEffect(() => {
-    const hoverData = home.map((data) => {
+    const hoverData = data.map((data) => {
       data.hover = false;
       return data;
     });
@@ -25,33 +25,31 @@ const OverviewComponent = () => {
   const setHover = (id, isHovered) => {
     const hoverData = cardData.map((data) => {
       if (data.id === id) {
-        console.log(id, isHovered);
         return { ...data, hover: isHovered };
       }
       return data;
     });
-    console.log(hoverData);
     setCardData([...hoverData]);
   };
 
   const getTotal = (stage) => {
     if (stage === STAGE.TO_START) {
       let total = 0;
-      home.forEach((data) => {
+      data.forEach((data) => {
         if (data.toStart) total = total + data.toStart;
       });
       return total;
     }
     if (stage === STAGE.WIP) {
       let total = 0;
-      home.forEach((data) => {
+      data.forEach((data) => {
         if (data.wip) total = total + data.wip;
       });
       return total;
     }
     if (stage === STAGE.COMPLETED) {
       let total = 0;
-      home.forEach((data) => {
+      data.forEach((data) => {
         if (data.completed) total = total + data.completed;
       });
       return total;
@@ -70,7 +68,7 @@ const OverviewComponent = () => {
           {cardData.map((data) => {
             if (data.toStart)
               return (
-                <ProjectCardComponent
+                <BoardCardComponent
                   key={data.releaseName}
                   data={data}
                   type={STAGE.TO_START}
@@ -91,7 +89,7 @@ const OverviewComponent = () => {
           {cardData.map((data) => {
             if (data.wip)
               return (
-                <ProjectCardComponent
+                <BoardCardComponent
                   key={data.releaseName}
                   data={data}
                   type={STAGE.WIP}
@@ -112,7 +110,7 @@ const OverviewComponent = () => {
           {cardData.map((data) => {
             if (data.completed)
               return (
-                <ProjectCardComponent
+                <BoardCardComponent
                   key={data.releaseName}
                   data={data}
                   type={STAGE.COMPLETED}

@@ -1,36 +1,37 @@
 import React from "react";
+import { BsArchive } from "react-icons/bs";
+import { useLocation, useParams } from "react-router-dom";
+
 import { projects } from "../../data/data";
+
 import AppButton from "../utils/AppButton.component";
-import NewProject from "../../assets/images/new-project.jpg";
-import ProjectItemCard from "../cards/ProjectItem.component";
+import PageTitle from "../utils/PageTitle.component";
+import ProjectCardComponent from "../cards/ProjectCard.component";
+import Breadcrumbs from "../utils/Breadcrumbs.component";
+import NewProjectCardComponent from "../cards/NewProjectCard.component";
+import ContainerWrapper from "../utils/ContainerWrapper.component";
+import useBreadcrumbs from "../../hooks/useBreadcrumbs";
+import { BiArchiveIn } from "react-icons/bi";
 
 const ProjectsComponent = () => {
-  return (
-    <div className="grid grid-cols-3 gap-3  w-full pt-4">
-      <div className="bg-white p-6 rounded basis-1/3">
-        <div className="flex flex-col justify-evenly h-full">
-          <img src={NewProject} width={120} className="mx-auto" />
-          <div className="flex flex-col justify-center gap-2 items-center">
-            <p className="text-xl text-center">Create a new project</p>
-            <AppButton
-              variant={"contained"}
-              label={"new project"}
-              icon={null}
-            />
-          </div>
-        </div>
-      </div>
+  const params = useParams();
+  const { pathname } = useLocation();
+  const [breadcrumbs] = useBreadcrumbs(params, pathname);
 
-      {projects.map((project) => {
-        return (
-          <ProjectItemCard
-            projectName={project.projectName}
-            owner={project.owner}
-            activeReleases={project.activeReleases}
-          />
-        );
-      })}
-    </div>
+  return (
+    <ContainerWrapper>
+      <div className="flex justify-between mt-3">
+        <PageTitle>Projects</PageTitle>
+        <AppButton variant="text" label="Archive" icon={<BsArchive />} />
+      </div>
+      <Breadcrumbs breadcrumbs={breadcrumbs} />
+      <div className="grid grid-cols-3 gap-3 overflow-y-scroll">
+        <NewProjectCardComponent />
+        {projects.map((project) => {
+          return <ProjectCardComponent key={project.id} project={project} />;
+        })}
+      </div>
+    </ContainerWrapper>
   );
 };
 

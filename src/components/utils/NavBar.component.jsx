@@ -5,8 +5,12 @@ import { navLinks } from "../../utils/utils";
 const NavBarComponent = () => {
   const location = useLocation();
 
-  const getNavStyle = (isActive) => {
-    if (isActive) {
+  const getNavStyle = (path) => {
+    console.log("location.pathname", location.pathname);
+    const pathName = location.pathname.startsWith("/projects")
+      ? "/projects"
+      : "/";
+    if (path === pathName) {
       return `p-2 rounded text-purple-500 bg-purple-100`;
     } else {
       return `p-2 rounded text-gray-500 bg-white hover:text-purple-500`;
@@ -19,10 +23,7 @@ const NavBarComponent = () => {
         {navLinks.map((nav) => {
           return (
             <div className="flex" key={nav.path}>
-              <Link
-                className={getNavStyle(location.pathname === nav.path)}
-                to={nav.path}
-              >
+              <Link className={getNavStyle(nav.path)} to={nav.path}>
                 {nav.icon}
               </Link>
             </div>

@@ -8,7 +8,7 @@ const TabNavigationComponent = ({ setSelectedTab, selectedTab }) => {
           type="button"
           className={`px-5 py-1.5 text-xs rounded ${
             selectedTab === 1
-              ? `text-white bg-purple-500`
+              ? `text-white bg-purple-500 cursor-pointer`
               : `hover:font-medium text-purple-600 hover:text-purple-700`
           }`}
           onClick={() => {
@@ -21,7 +21,7 @@ const TabNavigationComponent = ({ setSelectedTab, selectedTab }) => {
           type="button"
           className={`px-5 py-1.5 text-xs rounded ${
             selectedTab === 2
-              ? `text-white bg-purple-500`
+              ? `text-white bg-purple-500 cursor-pointer`
               : `hover:font-medium text-purple-600 hover:text-purple-700`
           }`}
           onClick={() => {

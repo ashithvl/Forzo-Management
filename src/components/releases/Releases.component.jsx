@@ -1,37 +1,73 @@
-import React from "react";
-import { releases } from "../../data/data";
+import React, { useState, useLayoutEffect } from "react";
+import { BsArchive } from "react-icons/bs";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+
+import { projects } from "../../data/data";
+
 import AppButton from "../utils/AppButton.component";
-import NewProject from "../../assets/images/new-project.jpg";
-import ReleaseItemCard from "../cards/ReleaseItem.component";
+import PageTitle from "../utils/PageTitle.component";
+import Breadcrumbs from "../utils/Breadcrumbs.component";
+import NewReleaseCardComponent from "../cards/NewReleaseCard.component";
+import ContainerWrapper from "../utils/ContainerWrapper.component";
+import ReleaseCardComponent from "../cards/ReleaseCard.component";
+import useBreadcrumbs from "../../hooks/useBreadcrumbs";
+import { BiArchiveIn } from "react-icons/bi";
 
 const ReleasesComponent = () => {
+  const params = useParams();
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const [breadcrumbs] = useBreadcrumbs(params, pathname);
+
+  const [releases, setReleases] = useState([]);
+
+  useLayoutEffect(() => {
+    const project = projects.find(
+      (project) => project.id === parseInt(params.projectId)
+    );
+    setReleases(project.releases);
+  }, []);
+
   return (
-    <div className="grid grid-cols-3 gap-3  w-full pt-4">
-      <div className="bg-white p-6 rounded basis-1/3 items-center">
-        <div className="flex flex-row  justify-evenly ">
-          <img src={NewProject} width={80} className="mx-auto hy-auto" />
-          <div className="flex flex-col justify-center items-center h-full self-center gap-4">
-            <p className="text-xl text-center">Create a new release</p>
-            <AppButton
-              variant={"contained"}
-              label={"new release"}
-              icon={null}
-              style={{ width: "100%" }}
-            />
-          </div>
+    <ContainerWrapper>
+      <div className="flex justify-between mt-3">
+        <PageTitle>Releases</PageTitle>
+        <div className="flex">
+          <AppButton
+            variant="text"
+            label="Blacklog"
+            icon={<BiArchiveIn />}
+            clickHandler={() =>
+              navigate(`/projects/${params.projectId}/backlog`)
+            }
+          />
+          <AppButton variant="text" label="Archive" icon={<BsArchive />} />
         </div>
       </div>
-
-      {releases.map((release) => {
-        return (
-          <ReleaseItemCard
-            releaseName={release.releaseName}
-            owner={release.owner}
-          />
-        );
-      })}
-    </div>
+      <Breadcrumbs breadcrumbs={breadcrumbs} />
+      <div className="grid grid-cols-3 gap-3 overflow-y-scroll">
+        <NewReleaseCardComponent />
+        {releases.map((release) => {
+          return (
+            <ReleaseCardComponent
+              projectId={parseInt(params.projectId)}
+              key={release.id}
+              release={release}
+            />
+          );
+        })}
+      </div>
+    </ContainerWrapper>
   );
 };
 
 export default ReleasesComponent;
+
+{
+  /* <div className="grid grid-cols-3 gap-3 w-full pt-4">
+     
+      </div>
+
+     
+    </div> */
+}

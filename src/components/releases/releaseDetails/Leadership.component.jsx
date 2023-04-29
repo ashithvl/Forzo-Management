@@ -1,6 +1,6 @@
 import React from "react";
 import { useTable } from "react-table";
-import { release } from "../../data/data";
+import { release } from "../../../data/data";
 import { MdDownload } from "react-icons/md";
 
 const LeadershipComponent = () => {

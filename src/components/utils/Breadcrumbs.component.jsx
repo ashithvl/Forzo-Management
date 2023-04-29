@@ -1,36 +1,34 @@
 import React from "react";
-import { breadcrumbs } from "../../data/data";
-import AppButton from "./AppButton.component";
 import { BsCircleFill } from "react-icons/bs";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const Breadcrumbs = ({ title, links, btnLabel, btnHandler, btnIcon }) => {
+const Breadcrumbs = ({ breadcrumbs }) => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  let getHoverStyle = (endPoint) =>
+    endPoint !== pathname ? "hover:underline hover:text-purple-500" : "";
+
+  let getEndpoint = (endPoint) => (endPoint !== pathname ? endPoint : null);
+
   return (
-    <div className="flex flex-row justify-between">
-      <div>
-        <h1 className="pb-4 text-2xl font-medium text-purple-800">{title}</h1>
-        <div className="w-auto flex flex-row">
-          {breadcrumbs.map((item) => {
-            if (item.path) {
-              return (
-                <div className="flex flex-row  items-center mr-3">
-                  <a className="mr-3 text-sm" href={item.path}>
-                    {item.name}
-                  </a>
-                  <BsCircleFill className="text-neutral-500" size={4} />
-                </div>
-              );
-            }
-          })}
-        </div>
-      </div>
-      <div>
-        <AppButton
-          variant={"text"}
-          label={btnLabel}
-          clickHandler={btnHandler}
-          icon={btnIcon}
-        />
-      </div>
+    <div className="w-auto flex flex-row">
+      {breadcrumbs.map((item, index) => {
+        return (
+          <div
+            key={item.name}
+            className="flex flex-row items-center mr-2 mb-4 cursor-pointer"
+            onClick={() => navigate(getEndpoint(item.endPoint))}
+          >
+            <p className={`mr-3 text-sm ${getHoverStyle(item.endPoint)}`}>
+              {item.name}
+            </p>
+            {index !== breadcrumbs.length - 1 && (
+              <BsCircleFill className="text-neutral-500" size={4} />
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 };

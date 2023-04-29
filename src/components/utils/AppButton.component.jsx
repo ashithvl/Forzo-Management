@@ -1,27 +1,34 @@
 import React from "react";
 
-const AppButton = ({ label, variant, clickHandler, icon, style }) => {
+const AppButton = ({
+  label,
+  clickHandler = null,
+  variant = "contained",
+  icon = null,
+  size = "small",
+}) => {
   const buttonHandler = () => {
+    let sizeStyle = size === "medium" ? "text-sm" : "text-xm";
     if (variant === "contained") {
-      console.log("var", style);
       return (
         <div
-          style={{ style }}
-          className="flex justify-center flex-row bg-purple-600 p-2 rounded align-middle cursor-pointer"
+          className="flex justify-center flex-row bg-purple-500 p-2 rounded align-middle cursor-pointer"
           onClick={clickHandler}
         >
-          {icon}
-          <p className="text-sm text-white">{label.toUpperCase()}</p>
+          <div className="text-purple-500">{icon}</div>
+          <p className={`${sizeStyle} text-white`}>{label.toUpperCase()}</p>
         </div>
       );
     } else if (variant === "text") {
       return (
         <div
-          style={{ style }}
           className="flex justify-center flex-row  p-2 rounded items-center gap-2 align-middle cursor-pointer hover:bg-purple-100"
+          onClick={clickHandler}
         >
-          {icon}
-          <p className="text-base text-purple-600">{label.toUpperCase()}</p>
+          <div className="text-purple-500">{icon}</div>
+          <p className={`${sizeStyle} text-purple-500`}>
+            {label.toUpperCase()}
+          </p>
         </div>
       );
     }

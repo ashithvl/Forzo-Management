@@ -28,7 +28,7 @@ const FoldersComponent = ({ showDrive, setDrive }) => {
       {showDrive && (
         <div className="flex absolute top-0 right-0 w-screen ">
           <div
-            className=" bg-black w-2/3 h-screen opacity-25"
+            className=" bg-black w-2/3 h-screen opacity-25 cursor-pointer"
             onClick={() => {
               setDrive(false);
             }}
@@ -43,29 +43,29 @@ const FoldersComponent = ({ showDrive, setDrive }) => {
 
             {/* Folder view ------------------------------- */}
 
-            {/* <h2 className="text-sky-500 font-semibold pt-6">Folders</h2>
-        <div className="p-6 w-auto flex gap-10 flex-row flex-wrap">
-          <div className="flex flex-col items-center">
-            <MdFolder className="text-neutral-600" size={60} />
-            <p className="text-sm">Project Plan</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <MdFolder className="text-neutral-600" size={60} />
-            <p className="text-sm">Requirement</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <MdFolder className="text-neutral-600" size={60} />
-            <p className="text-sm">Design</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <MdFolder className="text-neutral-600" size={60} />
-            <p className="text-sm">Requirement</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <MdFolder className="text-neutral-600" size={60} />
-            <p className="text-sm">Requirement</p>
-          </div>
-        </div> */}
+            <h2 className="text-sky-500 font-semibold pt-6">Folders</h2>
+            <div className="p-6 w-auto flex gap-10 flex-row flex-wrap">
+              <div className="flex flex-col items-center">
+                <MdFolder className="text-neutral-600" size={60} />
+                <p className="text-sm">Project Plan</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <MdFolder className="text-neutral-600" size={60} />
+                <p className="text-sm">Requirement</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <MdFolder className="text-neutral-600" size={60} />
+                <p className="text-sm">Design</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <MdFolder className="text-neutral-600" size={60} />
+                <p className="text-sm">Requirement</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <MdFolder className="text-neutral-600" size={60} />
+                <p className="text-sm">Requirement</p>
+              </div>
+            </div>
 
             {/* File list view ----------------------------- */}
 

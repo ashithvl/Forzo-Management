@@ -1,4 +1,4 @@
-const home = [
+const data = [
   {
     id: 1,
     projectName: "Everify",
@@ -17,6 +17,8 @@ const home = [
     },
     requirementStatus: 1,
     requirementVersion: 10,
+    isActive: true,
+    primaryOwner: "Deepak",
   },
   {
     id: 2,
@@ -36,6 +38,8 @@ const home = [
     },
     requirementStatus: 2,
     requirementVersion: 10,
+    isActive: true,
+    primaryOwner: "Srilekha",
   },
   {
     id: 3,
@@ -55,6 +59,8 @@ const home = [
     },
     requirementStatus: 1,
     requirementVersion: 10,
+    isActive: true,
+    primaryOwner: "Srilekha",
   },
   {
     id: 4,
@@ -74,6 +80,8 @@ const home = [
     },
     requirementStatus: 1,
     requirementVersion: 10,
+    isActive: true,
+    primaryOwner: "Srilekha",
   },
   {
     id: 5,
@@ -93,6 +101,8 @@ const home = [
     },
     requirementStatus: 1,
     requirementVersion: 10,
+    isActive: true,
+    primaryOwner: "Srilekha",
   },
 ];
 
@@ -185,32 +195,120 @@ const todoList = [
   },
 ];
 
-const breadcrumbs = [
-  {
-    path: "/",
-    name: "Home",
-  },
-  {
-    path: "/project",
-    name: "Project",
-  },
-];
-
 const projects = [
   {
+    id: 1,
+    projectName: "Everify",
+    primaryOwner: "Deepak",
+    releases: [
+      {
+        id: 1,
+        releaseName: "r2.0 - canopy - upgrade",
+        owner: "Deepak",
+        planned: null,
+        actual: null,
+        totalModules: 10,
+        toStart: 2,
+        wip: 6,
+        completed: 2,
+        updatedAt: "26-03-2023",
+        uat: {
+          isUat: false,
+          customerDefects: 0,
+          internalDefects: 0,
+        },
+        requirementStatus: 1,
+        requirementVersion: 10,
+        isActive: true,
+      },
+    ],
+  },
+  {
+    id: 2,
     projectName: "Dealerline",
-    owner: "Srilekha",
-    activeReleases: ["website", "blog"],
-  },
-  {
-    projectName: "eVerify",
-    owner: "Deepak",
-    activeReleases: ["ev-2.5", "ev-3.0"],
-  },
-  {
-    projectName: "eVerify",
-    owner: "Deepak",
-    activeReleases: ["ev-2.5", "ev-3.0"],
+    primaryOwner: "Srilekha",
+    releases: [
+      {
+        id: 1,
+        releaseName: "r11.0 - auto-rating",
+        owner: "Srilekha",
+        planned: 300,
+        actual: 100,
+        totalModules: 14,
+        toStart: 2,
+        wip: 10,
+        completed: 2,
+        updatedAt: "23-03-2023",
+        uat: {
+          isUat: false,
+          customerDefects: 0,
+          internalDefects: 0,
+        },
+        requirementStatus: 2,
+        requirementVersion: 10,
+        isActive: true,
+      },
+      {
+        id: 2,
+        releaseName: "r11.5 - carleton",
+        owner: "Srilekha",
+        planned: 300,
+        actual: 400,
+        totalModules: 3,
+        toStart: 2,
+        wip: 0,
+        completed: 1,
+        updatedAt: "20-03-2023",
+        uat: {
+          isUat: true,
+          customerDefects: 4,
+          internalDefects: 11,
+        },
+        requirementStatus: 1,
+        requirementVersion: 10,
+        isActive: true,
+      },
+      {
+        id: 3,
+        releaseName: "r12.0 - sel - trade - val",
+        owner: "Srilekha",
+        planned: 300,
+        actual: 200,
+        totalModules: 8,
+        toStart: 2,
+        wip: 6,
+        completed: 0,
+        updatedAt: "20-03-2023",
+        uat: {
+          isUat: false,
+          customerDefects: 10,
+          internalDefects: 0,
+        },
+        requirementStatus: 1,
+        requirementVersion: 10,
+        isActive: true,
+      },
+      {
+        id: 4,
+        releaseName: "r10.0 - UI - update",
+        owner: "Srilekha",
+        planned: 300,
+        actual: 200,
+        totalModules: 8,
+        toStart: 0,
+        wip: 0,
+        completed: 8,
+        updatedAt: "20-01-2023",
+        uat: {
+          isUat: true,
+          customerDefects: 0,
+          internalDefects: 0,
+        },
+        requirementStatus: 1,
+        requirementVersion: 10,
+        isActive: true,
+      },
+    ],
   },
 ];
 
@@ -339,6 +437,7 @@ const driveFolders = [
     name: "Production Support",
   },
 ];
+
 const driveFiles = [
   {
     name: "ev-r2-canopy_upgrade-pp-2023.04.12.xlsx",
@@ -371,9 +470,8 @@ const driveFiles = [
 ];
 
 export {
-  home,
+  data,
   todoList,
-  breadcrumbs,
   projects,
   releases,
   backlogs,
