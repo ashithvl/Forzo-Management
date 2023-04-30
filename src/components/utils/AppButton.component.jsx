@@ -8,7 +8,7 @@ const AppButton = ({
   size = "small",
 }) => {
   const buttonHandler = () => {
-    let sizeStyle = size === "medium" ? "text-sm" : "text-xm";
+    let sizeStyle = size === "medium" ? "text-sm" : "text-xs";
     if (variant === "contained") {
       return (
         <div

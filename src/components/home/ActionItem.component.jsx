@@ -9,7 +9,7 @@ import ActionItemCardComponent from "../cards/ActionItemCard.component";
 import TodoCardComponent from "../cards/TodoCard.component";
 import AddTodoComponent from "../AddTodo.component";
 
-import HeaderComponent from "../boards/Header.component";
+import HeaderComponent from "../utils/BoardHeader.component";
 import moment from "moment";
 
 const ActionItemComponent = () => {

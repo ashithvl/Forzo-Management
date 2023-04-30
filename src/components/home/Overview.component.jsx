@@ -4,7 +4,7 @@ import { HiOutlineRocketLaunch } from "react-icons/hi2";
 import { BsLightningCharge } from "react-icons/bs";
 import { FiThumbsUp } from "react-icons/fi";
 
-import HeaderComponent from "../boards/Header.component";
+import HeaderComponent from "../utils/BoardHeader.component";
 import BoardCardComponent from "../cards/BoardCard.component";
 
 import { data } from "../../data/data";

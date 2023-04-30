@@ -13,7 +13,7 @@ import {
   DATE,
 } from "../../utils/utils";
 
-import PillComponent from "../boards/Pill.component";
+import PillComponent from "../utils/Pill.component";
 
 const BoardCardComponent = ({ data, type, setHover }) => {
   const getCompleted = () => {
